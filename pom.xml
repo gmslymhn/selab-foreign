@@ -1,4 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project [
+        <!ELEMENT project (modelVersion|parent|groupId|artifactId|version|name|description|modules|packaging|properties|dependencyManagement|build)*>
+        <!ATTLIST project
+                xmlns CDATA #REQUIRED
+                xmlns:xsi CDATA #REQUIRED
+                xsi:schemaLocation CDATA #REQUIRED>
+        <!ELEMENT modelVersion (#PCDATA)>
+        <!ELEMENT parent (groupId|artifactId|version)*>
+        <!ELEMENT groupId (#PCDATA)>
+        <!ELEMENT artifactId (#PCDATA)>
+        <!ELEMENT version (#PCDATA)>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT description (#PCDATA)>
+        <!ELEMENT modules (module)*>
+        <!ELEMENT module (#PCDATA)>
+        <!ELEMENT packaging (#PCDATA)>
+        <!ELEMENT properties (foreign.version|java.version|project.build.sourceEncoding|project.reporting.outputEncoding|spring-boot.version|javax.servlet.version|cn.hutool.version|fastjson.version|mybatis.plus.boot.version|knife4j.version)*>
+        <!ELEMENT foreign.version (#PCDATA)>
+        <!ELEMENT java.version (#PCDATA)>
+        <!ELEMENT project.build.sourceEncoding (#PCDATA)>
+        <!ELEMENT project.reporting.outputEncoding (#PCDATA)>
+        <!ELEMENT spring-boot.version (#PCDATA)>
+        <!ELEMENT javax.servlet.version (#PCDATA)>
+        <!ELEMENT cn.hutool.version (#PCDATA)>
+        <!ELEMENT fastjson.version (#PCDATA)>
+        <!ELEMENT mybatis.plus.boot.version (#PCDATA)>
+        <!ELEMENT knife4j.version (#PCDATA)>
+        <!ELEMENT dependencyManagement (dependencies)*>
+        <!ELEMENT dependencies (dependency)*>
+        <!ELEMENT dependency (groupId|artifactId|version|type|scope)*>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT scope (#PCDATA)>
+        <!ELEMENT build (plugins)*>
+        <!ELEMENT plugins (plugin)*>
+        <!ELEMENT plugin (groupId|artifactId|version|configuration)*>
+        <!ELEMENT configuration (source|target|encoding)*>
+        <!ELEMENT source (#PCDATA)>
+        <!ELEMENT target (#PCDATA)>
+        <!ELEMENT encoding (#PCDATA)>
+        ]>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -33,6 +73,7 @@
         <cn.hutool.version>5.8.8</cn.hutool.version>
         <fastjson.version>2.0.14</fastjson.version>
         <mybatis.plus.boot.version>3.5.2</mybatis.plus.boot.version>
+        <knife4j.version>4.4.0</knife4j.version>
     </properties>
     <!-- 依赖声明 -->
     <dependencyManagement>
@@ -83,6 +124,12 @@
             <groupId>tyut.selab</groupId>
             <artifactId>selab-modular</artifactId>
             <version>${foreign.version}</version>
+        </dependency>
+        <!--knife4j-->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
         </dependency>
     </dependencies>
     </dependencyManagement>

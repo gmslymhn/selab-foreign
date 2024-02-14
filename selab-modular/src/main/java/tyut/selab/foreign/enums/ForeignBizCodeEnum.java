@@ -1,5 +1,7 @@
 package tyut.selab.foreign.enums;
 
+import lombok.Getter;
+
 /**
  * @ClassName: ForeignBizCodeEnum
  * @Description: 错误码和错误信息定义类
@@ -7,6 +9,7 @@ package tyut.selab.foreign.enums;
  * @CreateTime: 2024-02-12 09:22
  * @Version: 1.0
  **/
+@Getter
 public enum ForeignBizCodeEnum {
     UNKNOWN_EXCEPTION(10000, "系统未知错误"),
     VALID_EXCEPTION(10001, "参数校验异常"),
@@ -33,11 +36,4 @@ public enum ForeignBizCodeEnum {
         this.msg = msg;
     }
 
-    public Integer getCode() {
-        return code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
 }

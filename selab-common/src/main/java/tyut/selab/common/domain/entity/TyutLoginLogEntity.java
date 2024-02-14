@@ -2,6 +2,7 @@ package tyut.selab.common.domain.entity;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
  * @Version: 1.0
  **/
 @TableName("tyut_login_log")
+@Schema(description = "登陆日志")
 @Data
 @NoArgsConstructor
 public class TyutLoginLogEntity {

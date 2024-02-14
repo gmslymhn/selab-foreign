@@ -14,13 +14,13 @@ import java.io.Serializable;
  * @Version: 1.0
  **/
 @Data
-public class Result implements Serializable {
+public class JsonResult implements Serializable {
 
     private static final long serialVersionUID = 1L;
     /**
-     * 编码：0表示成功，其他值表示失败
+     * 编码：200表示成功，其他值表示失败
      */
-    private int code = 0;
+    private int code = 200;
     /**
      * 消息内容
      */
@@ -30,41 +30,41 @@ public class Result implements Serializable {
      */
     private Object data;
 
-    public static Result ok(Object data) {
-        Result result = new Result();
+    public static JsonResult ok(Object data) {
+        JsonResult result = new JsonResult();
         result.setCode(0);
         result.setData(data);
         return result;
     }
 
     public static boolean success(){
-        Result result = new Result();
+        JsonResult result = new JsonResult();
         return result.code==0;
     }
 
-    public static Result error() {
-        Result result = new Result();
+    public static JsonResult error() {
+        JsonResult result = new JsonResult();
         result.setCode(ErrorCode.INTERNAL_SERVER_ERROR);
         result.setMsg(MessageUtils.getMessage(result.code));
         return result;
     }
 
-    public static Result error(int code) {
-        Result result = new Result();
+    public static JsonResult error(int code) {
+        JsonResult result = new JsonResult();
         result.setCode(code);
         result.setMsg(MessageUtils.getMessage(result.code));
         return result;
     }
 
-    public static Result error(int code, String msg) {
-        Result result = new Result();
+    public static JsonResult error(int code, String msg) {
+        JsonResult result = new JsonResult();
         result.setCode(code);
         result.setMsg(msg);
         return result;
     }
 
-    public static Result error(String msg) {
-        Result result = new Result();
+    public static JsonResult error(String msg) {
+        JsonResult result = new JsonResult();
         result.setCode( ErrorCode.INTERNAL_SERVER_ERROR);
         result.setMsg(msg);
         return result;
