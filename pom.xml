@@ -32,6 +32,7 @@
         <javax.servlet.version>3.1.0</javax.servlet.version>
         <cn.hutool.version>5.8.8</cn.hutool.version>
         <fastjson.version>2.0.14</fastjson.version>
+        <mybatis.plus.boot.version>3.5.2</mybatis.plus.boot.version>
     </properties>
     <!-- 依赖声明 -->
     <dependencyManagement>
@@ -44,21 +45,14 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
+
         <!--MyBatis Plus框架依赖-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis.plus.boot.version}</version>
         </dependency>
-        <!--连接和操作MySQL数据库依赖-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!--验证和校验实体类-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
+
         <!-- 阿里JSON解析器 -->
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>

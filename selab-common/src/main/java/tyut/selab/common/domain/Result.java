@@ -1,7 +1,8 @@
-package tyut.selab.common.utils;
+package tyut.selab.common.domain;
 
 import lombok.Data;
 import tyut.selab.common.exception.ErrorCode;
+import tyut.selab.common.utils.MessageUtils;
 
 import java.io.Serializable;
 
