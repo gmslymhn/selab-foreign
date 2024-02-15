@@ -5,6 +5,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import org.springdoc.core.customizers.GlobalOpenApiCustomizer;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -20,6 +21,11 @@ import java.util.Map;
  **/
 @Configuration
 public class SwaggerConfig {
+    /**
+     * 是否开启swagger
+     */
+//    @Value("${knife4j.enabled}")
+//    private boolean enabled;
     /**
      * 根据@Tag 上的排序，写入x-order
      *
@@ -47,8 +53,8 @@ public class SwaggerConfig {
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("个人论坛博客")
-                        .version("1.0")
+                        .title("创新实验室对外网站")
+                        .version("0.0.1")
 
                         .description( "Knife4j集成springdoc-openapi示例")
                         .termsOfService("http://doc.xiaominfo.com")

@@ -32,14 +32,9 @@ public class JsonResult implements Serializable {
 
     public static JsonResult ok(Object data) {
         JsonResult result = new JsonResult();
-        result.setCode(0);
+        result.setCode(200);
         result.setData(data);
         return result;
-    }
-
-    public static boolean success(){
-        JsonResult result = new JsonResult();
-        return result.code==0;
     }
 
     public static JsonResult error() {
